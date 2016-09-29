@@ -1,0 +1,84 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        title Happy Q&A
+        link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+        link(href='/stylesheets/one-page-wonder.css', rel='stylesheet')
+        //if lt IE 9
+          script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+          script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    body
+        nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+
+                    a.navbar-brand(href='#') Happy Q&A
+                #bs-example-navbar-collapse-1.collapse.navbar-collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/blackboard/ask') CHIEDI qualcosa
+
+        header.header-image
+            .headline
+                .container
+                    h1 BENTOSA Happy Mondays
+                    h2 API
+        #API.container
+            hr.featurette-divider
+            div.featurette
+                h2.featurette-heading
+                    | GET /questions
+                    br
+                    span.text-muted restituisce tutte le domande disponibili
+                p.lead
+                    | Senza autenticazione
+
+
+            hr.featurette-divider
+            div.featurette
+                h2.featurette-heading
+                    | POST /questions
+                    br
+                    span.text-muted Crea una nuova domanda
+                    br
+
+                p.lead
+                    | JSON body: {"name":"il tuo nome", "topic":"Argomento della domanda", "question":"il testo della domanda"}
+                    br
+                    | Senza autenticazione
+
+
+            hr.featurette-divider
+            div.featurette
+                h2.featurette-heading
+                    | GET /questions/:id
+                    br
+                    span.text-muted restituisce una domanda dato il suo :id
+                p.lead
+                    | Senza autenticazione
+
+
+
+
+
+
+
+            footer
+                hr.featurette-divider
+                .row
+                    .col-lg-12
+                        p Copyright &copy; Bentosa
+        script(src='/javascripts/jquery.js')
+        script(src='/javascripts/bootstrap.min.js')
+
+
