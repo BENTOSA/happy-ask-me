@@ -18,8 +18,8 @@ Contributors
 ------------
 
 <table><tbody>
-    <tr><th align="left">Antonio Pintus</th><td><a href="https://github.com/pintux">GitHub/pintux</a></td><td><a href="https://www.pintux.it">Web</a></td></tr>
-    <tr><th align="left">Federico Pinna</th><td><a href="https://github.com/0xfede">GitHub/0xfede</a></td><td><a href="">Web</a></td></tr>
+    <tr><th align="left">Antonio Pintus</th><td><a href="https://github.com/pintux">GitHub/pintux</a></td><td><a href="http://www.pintux.it">Web</a></td></tr>
+    <tr><th align="left">Federico Pinna</th><td><a href="https://github.com/0xfede">GitHub/0xfede</a></td><td><a href="http://www.0xfede.com/">Web</a></td></tr>
 </tbody></table>
 
 
