@@ -48,13 +48,15 @@ html(lang='en')
                         span.text-muted #{q.question}
                     p.lead
                         | #{q.name}
-                    button.btn.btn-xs.btn-danger Elimina
+                    button.btn.btn-xs.btn-primary OK, risposto
+                    button.btn.btn-xs.btn-default.space-left Riapri
+
 
 
 
             footer
                 hr.featurette-divider
-                button.btn.btn-xs.btn-danger Elimina tutte le domande
+                //button.btn.btn-xs.btn-danger Elimina tutte le domande
                 .row
                     .col-lg-12
                         p Copyright &copy; Bentosa
@@ -74,7 +76,8 @@ html(lang='en')
                             + '<br/>'
                             + '<span class="text-muted">' + msg.question + '</span></h2>'
                             + '<p class="lead">' + msg.name + '</p>'
-                            + '<button class="btn btn-xs btn-danger">Elimina</button>'
+                            + '<button class="btn btn-xs btn-primary">OK, risposto</button>'
+                            + '<button class="btn btn-xs btn-default space-left">Riapri</button>'
                             + '</div>'
                             + '<hr class="featurette-divider"/>');
                 } else {
@@ -85,7 +88,8 @@ html(lang='en')
                             + '<br/>'
                             + '<span class="text-muted">' + msg.question + '</span></h2>'
                             + '<p class="lead">' + msg.name + '</p>'
-                            + '<button class="btn btn-xs btn-danger">Elimina</button>'
+                            + '<button class="btn btn-xs btn-primary">OK, risposto</button>'
+                            + '<button class="btn btn-xs btn-default space-left">Riapri</button>'
                             + '</div>'
                             + '<hr class="featurette-divider"/>');
 

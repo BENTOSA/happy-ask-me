@@ -214,3 +214,7 @@ footer {
     font-weight: 400;
     color: darkgreen;
 }
+
+.space-left{
+    margin-left: 10px;
+}
