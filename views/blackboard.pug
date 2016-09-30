@@ -62,8 +62,6 @@ html(lang='en')
             var socket = io();
             socket.on('questions-blackboard', function(msg){
                 $('#questions div.featurette').removeClass('animated flash');
-                console.log($('#questions div.featurette:first'))
-
 
                 if($('#questions div.featurette:first').length !== 0) {
                     $('#questions div.featurette:first').before('<div id="'
