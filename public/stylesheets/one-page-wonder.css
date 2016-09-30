@@ -209,3 +209,8 @@ footer {
     font-weight: 400;
     color: red;
 }
+
+.success{
+    font-weight: 400;
+    color: darkgreen;
+}

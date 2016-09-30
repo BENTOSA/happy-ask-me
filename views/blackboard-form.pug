@@ -22,11 +22,13 @@ html(lang='en')
                         span.icon-bar
                         span.icon-bar
 
-                    a.navbar-brand(href='#') Happy Q&A
+                    a.navbar-brand(href='/') Happy Q&A
                 #bs-example-navbar-collapse-1.collapse.navbar-collapse
                     ul.nav.navbar-nav
                         li
-                            a(href='#about') About
+                            a(href='/blackboard') Q&A blackboard
+                        li
+                            a(href='/blackboard/ask') Fai una DOMANDA
 
         header.header-image
             .headline
@@ -38,7 +40,7 @@ html(lang='en')
             br
             br
             label#error
-            form
+            form(action='#' onSubmit="return false;")
                 .form-group
                     label(for='name') Nome
                     input#name.form-control(type='text', placeholder='Nome')
@@ -59,26 +61,34 @@ html(lang='en')
         script(src='/javascripts/bootstrap.min.js')
         script.
             function sendQuestion() {
-                console.log('CLICKED');
                 var name = $('#name').val();
                 var topic = $('#topic').val();
                 var question = $('#question').val();
 
-
-
-                $('#error').removeClass('error');
-                $('#error').val('');
+                $('#error').removeClass('error success');
+                $('#error').text('');
 
 
                 if(name !== '' && question !== ''){
                     var data = {"name": name, "topic":topic, "question":question};
-                    console.log(data);
+                    console.log('DATA', data);
                     $.post("/questions", data , function (data, status) {
-                        $('error').val(status);
+                        if(status === 'success'){
+                            $('#error').text('Domanda inviata correttamente, grazie!');
+                            $('#error').addClass('success');
+                            $('#name').val('');
+                            $('#topic').val('');
+                            $('#question').val('');
+
+                        } else {
+                            $('#error').text("Impossibile inviare la domanda, riprova tra poco.")
+                            $('#error').addClass('error');
+                        }
                     });
 
                 } else {
-                    $('#error').val("I campi Nome e Domanda sono obbligatori.")
+
+                    $('#error').text("I campi Nome e Domanda sono obbligatori.")
                     $('#error').addClass('error');
 
                 }
