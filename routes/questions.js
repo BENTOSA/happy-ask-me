@@ -19,6 +19,7 @@ router.route('/')
 
     .post((req, res, next) => {
         let newQ = req.body;
+        debug('body:', newQ);
         if (!('name' in newQ && 'topic' in newQ && 'question' in newQ)){
             return res.status(400).json({error: 400, message: 'Bad request, check the sent body'});
         } else {

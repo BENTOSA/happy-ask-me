@@ -15,11 +15,6 @@ const db = new JSONdb('./db/db.json');
 const uuid = require('uuid');
 
 
-//save two default questions
-let id1 = uuid.v1();
-let id2 = uuid.v1();
-db.set(id1, {id: id1, name:"Antonio", topic:"Generale", question: "Federico, ma non dovevi venire vestito da Elvis?"});
-db.set(id2, {id: id2, name:"Federico", topic:"Generale", question: "Antonio, chi comincia?"});
 
 var app = express();
 

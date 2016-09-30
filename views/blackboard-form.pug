@@ -36,19 +36,20 @@ html(lang='en')
         .container
             br
             br
+            br
+            label#error
             form
                 .form-group
-                    label(for='name') Nome (opzionale)
+                    label(for='name') Nome
                     input#name.form-control(type='text', placeholder='Nome')
                 .form-group
-                    label(for='topic') Argomento
+                    label(for='topic') Argomento (opzionale)
                     input#topic.form-control(type='text', placeholder='Argomento')
                 .form-group
                     label(for='question') La tua domanda
                     textarea#question.form-control(type='text', placeholder='Inserisci la tua domanda')
-
-
-                button.btn.btn-primary.btn-large(type='Invia la Domanda') INVIA la Domanda
+                .form-group
+                    button.btn.btn-primary.btn-large(onclick='sendQuestion()') INVIA la Domanda
             hr.featurette-divider
             footer
                 .row
@@ -56,5 +57,35 @@ html(lang='en')
                         p Copyright &copy; Bentosa
         script(src='/javascripts/jquery.js')
         script(src='/javascripts/bootstrap.min.js')
+        script.
+            function sendQuestion() {
+                console.log('CLICKED');
+                var name = $('#name').val();
+                var topic = $('#topic').val();
+                var question = $('#question').val();
+
+                console.log(name);
+                console.log(topic);
+                console.log(question);
+
+                $('#error').removeClass('error');
+                $('#error').val('');
+
+
+                if(name !== '' && question !== ''){
+                    var data = {"name": name, "topic":topic, "question":question};
+                    console.log(data);
+                    $.post("/questions", data , function (data, status) {
+                        $('error').val(status);
+                    });
+
+                } else {
+                    $('#error').val("I campi Nome e Domanda sono obbligatori.")
+                    $('#error').addClass('error');
+
+                }
+
+
+            }
 
 

@@ -204,3 +204,8 @@ footer {
     animation-name: flash;
     background-color: #DAE5E9;
 }
+
+.error{
+    font-weight: 400;
+    color: red;
+}

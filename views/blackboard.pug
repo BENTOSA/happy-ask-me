@@ -62,17 +62,33 @@ html(lang='en')
             var socket = io();
             socket.on('questions-blackboard', function(msg){
                 $('#questions div.featurette').removeClass('animated flash');
+                console.log($('#questions div.featurette:first'))
 
-                $('#questions div.featurette:first').before('<div id="'
-                        + msg.id
-                        + '" class="featurette animated flash">'
-                        + '<h2 class="featurette-heading">Q:&nbsp'+ msg.topic
-                        + '<br/>'
-                        + '<span class="text-muted">'+ msg.question +'</span></h2>'
-                        + '<p class="lead">'+ msg.name +'</p>'
-                        + '<button class="btn btn-xs btn-danger">Elimina</button>'
-                        +'</div>'
-                        + '<hr class="featurette-divider"/>');
+
+                if($('#questions div.featurette:first').length !== 0) {
+                    $('#questions div.featurette:first').before('<div id="'
+                            + msg.id
+                            + '" class="featurette animated flash">'
+                            + '<h2 class="featurette-heading">Q:&nbsp' + msg.topic
+                            + '<br/>'
+                            + '<span class="text-muted">' + msg.question + '</span></h2>'
+                            + '<p class="lead">' + msg.name + '</p>'
+                            + '<button class="btn btn-xs btn-danger">Elimina</button>'
+                            + '</div>'
+                            + '<hr class="featurette-divider"/>');
+                } else {
+                    $('#questions footer').before('<br><br/><div id="'
+                            + msg.id
+                            + '" class="featurette animated flash">'
+                            + '<h2 class="featurette-heading">Q:&nbsp' + msg.topic
+                            + '<br/>'
+                            + '<span class="text-muted">' + msg.question + '</span></h2>'
+                            + '<p class="lead">' + msg.name + '</p>'
+                            + '<button class="btn btn-xs btn-danger">Elimina</button>'
+                            + '</div>'
+                            + '<hr class="featurette-divider"/>');
+
+                }
 
             });
 
