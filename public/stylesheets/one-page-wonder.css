@@ -218,3 +218,7 @@ footer {
 .space-left{
     margin-left: 10px;
 }
+
+.read{
+    opacity: 0.2;
+}

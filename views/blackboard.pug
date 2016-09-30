@@ -48,8 +48,8 @@ html(lang='en')
                         span.text-muted #{q.question}
                     p.lead
                         | #{q.name}
-                    button.btn.btn-xs.btn-primary OK, risposto
-                    button.btn.btn-xs.btn-default.space-left Riapri
+                    button.btn.btn-xs.btn-primary(onclick="markAsRead('"+q.id+"')") OK, risposto
+                    button.btn.btn-xs.btn-default.space-left(onclick="markAsOpen('"+q.id+"')") Riapri
 
 
 
@@ -76,8 +76,8 @@ html(lang='en')
                             + '<br/>'
                             + '<span class="text-muted">' + msg.question + '</span></h2>'
                             + '<p class="lead">' + msg.name + '</p>'
-                            + '<button class="btn btn-xs btn-primary">OK, risposto</button>'
-                            + '<button class="btn btn-xs btn-default space-left">Riapri</button>'
+                            + '<button class="btn btn-xs btn-primary" onclick="markAsRead(\''+ msg.id +'\')">OK, risposto</button>'
+                            + '<button class="btn btn-xs btn-default space-left" onclick="markAsOpen(\''+ msg.id +'\')">Riapri</button>'
                             + '</div>'
                             + '<hr class="featurette-divider"/>');
                 } else {
@@ -88,8 +88,8 @@ html(lang='en')
                             + '<br/>'
                             + '<span class="text-muted">' + msg.question + '</span></h2>'
                             + '<p class="lead">' + msg.name + '</p>'
-                            + '<button class="btn btn-xs btn-primary">OK, risposto</button>'
-                            + '<button class="btn btn-xs btn-default space-left">Riapri</button>'
+                            + '<button class="btn btn-xs btn-primary" onclick="markAsRead(\'' + msg.id + '\')">OK, risposto</button>'
+                            + '<button class="btn btn-xs btn-default space-left" onclick="markAsOpen(\'' + msg.id + '\')">Riapri</button>'
                             + '</div>'
                             + '<hr class="featurette-divider"/>');
 
@@ -98,9 +98,18 @@ html(lang='en')
             });
 
         script.
-            function deleteQuestion(id) {
+            function markAsRead(id) {
+                $('#'+id).addClass('read');
+                $('#' + id).removeClass('animated flash');
+
                 return;
 
-            }
+            };
+
+            function markAsOpen(id) {
+                $('#'+id).removeClass('read animated flash');
+                return;
+
+            };
 
 
