@@ -46,7 +46,10 @@ app.use(function(req,res,next){
 
 app.use('/', routes);
 app.use('/blackboard', blackboard);
-app.use('/questions', questions);
+app.use('/api/v1/questions', questions);
+app.get('/api/v1/swagger.json', (req, res) => {
+    res.json(require('./swagger.json'));
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

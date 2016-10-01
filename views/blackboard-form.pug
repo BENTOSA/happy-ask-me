@@ -72,7 +72,7 @@ html(lang='en')
                 if(name !== '' && question !== ''){
                     var data = {"name": name, "topic":topic, "question":question};
                     console.log('DATA', data);
-                    $.post("/questions", data , function (data, status) {
+                    $.post("/api/v1/questions", data , function (data, status) {
                         if(status === 'success'){
                             $('#error').text('Domanda inviata correttamente, grazie!');
                             $('#error').addClass('success');

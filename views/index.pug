@@ -39,7 +39,7 @@ html(lang='en')
             hr.featurette-divider
             div.featurette
                 h2.featurette-heading
-                    | GET /questions
+                    | GET /api/v1/questions
                     br
                     span.text-muted restituisce tutte le domande disponibili
                 p.lead
@@ -49,7 +49,7 @@ html(lang='en')
             hr.featurette-divider
             div.featurette
                 h2.featurette-heading
-                    | POST /questions
+                    | POST /api/v1/questions
                     br
                     span.text-muted Crea una nuova domanda
                     br
@@ -63,7 +63,7 @@ html(lang='en')
             hr.featurette-divider
             div.featurette
                 h2.featurette-heading
-                    | GET /questions/:id
+                    | GET /api/v1/questions/:id
                     br
                     span.text-muted restituisce una domanda dato il suo :id
                 p.lead
