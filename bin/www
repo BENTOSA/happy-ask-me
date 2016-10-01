@@ -6,8 +6,17 @@
 
 var app = require('../main');
 var debug = require('debug')('happy-ask-me:server');
+var fs = require('fs');
 var http = require('http');
+var https = require('https');
 
+/**
+ * Make sure the db path exists
+ */
+try {
+  fs.mkdirSync('../db');
+} catch(e) {
+}
 
 /**
  * Get port from environment and store in Express.
@@ -20,7 +29,14 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+if (process.env.SSLKEY && process.env.SSLCERT) {
+  var server = https.createServer({
+    key: fs.readFileSync(process.env.SSLKEY),
+    cert: fs.readFileSync(process.env.SSLCERT)
+  }, app);
+} else {
+  var server = http.createServer(app);
+}
 
 /**
  * Listen on provided port, on all network interfaces.

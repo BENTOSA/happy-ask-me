@@ -1,5 +1,7 @@
 node_modules
 .idea
+npm-debug.log
+db
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
