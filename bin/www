@@ -11,14 +11,6 @@ var http = require('http');
 var https = require('https');
 
 /**
- * Make sure the db path exists
- */
-try {
-  fs.mkdirSync('../db');
-} catch(e) {
-}
-
-/**
  * Get port from environment and store in Express.
  */
 

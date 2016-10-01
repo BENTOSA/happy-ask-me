@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+const escape = require('escape-html');
 const debug = require('debug')('questions');
 const uuid = require('uuid');
 
@@ -25,6 +26,9 @@ router.route('/')
         } else {
             let id = uuid.v1();
             newQ['id'] = id;
+            newQ.name = escape(newQ.name);
+            newQ.topic = escape(newQ.topic);
+            newQ.question = escape(newQ.question);
             req.db.set(id, newQ);
 
             //emit!
