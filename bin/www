@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('../main');
 var debug = require('debug')('happy-ask-me:server');
 var http = require('http');
 
