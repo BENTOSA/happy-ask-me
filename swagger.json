@@ -29,6 +29,7 @@
     "/questions": {
       "get": {
         "summary": "Retrieve a list of Questions",
+        "operationId": "list",
         "responses": {
           "200": {
             "description": "List of matching questions",
@@ -49,6 +50,7 @@
       },
       "post": {
         "summary": "Create a new Question",
+        "operationId": "create",
         "parameters": [
           {
             "description": "The Question to be created",
@@ -86,6 +88,7 @@
     "/questions/{id}": {
       "get": {
         "summary": "Retrieve a Question by id",
+        "operationId": "get",
         "parameters": [
           {
             "$ref": "#/parameters/id"
